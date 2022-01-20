@@ -1,4 +1,4 @@
-import { Column, MigrationInterface, QueryRunner, Table } from 'typeorm';
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class CreateUserTokens1642423270207 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -26,18 +26,13 @@ export class CreateUserTokens1642423270207 implements MigrationInterface {
             type: 'uuid',
           },
           {
-            name: 'email',
-            type: 'varchar',
-            isUnique: true,
-          },
-          {
             name: 'created_at',
-            type: 'timestamp',
+            type: 'timestamp with time zone',
             default: 'now()',
           },
           {
             name: 'updated_at',
-            type: 'timestamp',
+            type: 'timestamp with time zone',
             default: 'now()',
           },
         ],
